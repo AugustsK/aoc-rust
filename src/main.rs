@@ -3,7 +3,7 @@ mod utils;
 
 use std::time::Instant;
 use clap::Parser;
-use solutions::{y2023};
+use solutions::{y2023,y2024};
 
 pub type SolutionPair = (String, String);
 
@@ -40,6 +40,7 @@ fn main() {
 fn get_year(year: u16) -> fn(day: u8, use_test_input: bool, path_to_inputs: String) -> SolutionPair {
     match year {
         2023 => y2023::solve,
+        2024 => y2024::solve,
         _ => unimplemented!()
     }
 }
