@@ -73,7 +73,6 @@ fn solve_part_two(input: &str) -> i64 {
     let mut result: i64 = 0;
 
     for line in input.lines() {
-        // 2jxzhlkhdktxfjjleightdfpgfxjv
         let chars = line.chars();
         let mut temp_match = String::new();
         let mut first_digit: Option<char> = None;
@@ -130,7 +129,7 @@ fn solve_part_two(input: &str) -> i64 {
     result
 }
 
-pub fn solve(use_test_input: bool, path_to_inputs: String) ->SolutionPair {
+pub fn solve(use_test_input: bool, path_to_inputs: String) -> SolutionPair {
     let input = inputs::get_input(path_to_inputs, 2023, 1, use_test_input);
 
     (format!("{}", solve_part_one(&input)), format!("{}", solve_part_two(&input)))
