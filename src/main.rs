@@ -4,9 +4,9 @@ extern crate enum_map;
 mod solutions;
 mod utils;
 
-use std::time::Instant;
 use clap::Parser;
-use solutions::{y2023,y2024};
+use solutions::{y2023, y2024};
+use std::time::Instant;
 
 pub type SolutionPair = (String, String);
 
@@ -37,14 +37,15 @@ fn main() {
     println!("  » part 1 = {}", solution.0);
     println!("  » Part 2 = {}", solution.1);
     println!("\n Executed in {:.4} ms", elapsed_ms)
-
 }
 
-fn get_year(year: u16) -> fn(day: u8, use_test_input: bool, path_to_inputs: String) -> SolutionPair {
+fn get_year(
+    year: u16,
+) -> fn(day: u8, use_test_input: bool, path_to_inputs: String) -> SolutionPair {
     match year {
         2023 => y2023::solve,
         2024 => y2024::solve,
-        _ => unimplemented!()
+        _ => unimplemented!(),
     }
 }
 

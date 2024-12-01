@@ -1,7 +1,7 @@
-use std::collections::{HashMap, HashSet};
-use std::cmp;
-use crate::{SolutionPair};
 use crate::utils::inputs;
+use crate::SolutionPair;
+use std::cmp;
+use std::collections::{HashMap, HashSet};
 
 type Coordinate = (usize, usize);
 
@@ -26,7 +26,10 @@ fn solve_part_one(input: &str) -> u64 {
                 current_digits.push(ch);
             } else {
                 if current_digits.len() >= 1 {
-                    maybe_part_numbers.insert((current_digits_x1, pos_x - 1, pos_y), current_digits.parse::<u64>().unwrap());
+                    maybe_part_numbers.insert(
+                        (current_digits_x1, pos_x - 1, pos_y),
+                        current_digits.parse::<u64>().unwrap(),
+                    );
                     current_digits_x1 = 0;
                     current_digits = String::new();
                 }
@@ -55,7 +58,10 @@ fn solve_part_one(input: &str) -> u64 {
         }
 
         if current_digits.len() >= 1 {
-            maybe_part_numbers.insert((current_digits_x1, last_x - 1, pos_y), current_digits.parse::<u64>().unwrap());
+            maybe_part_numbers.insert(
+                (current_digits_x1, last_x - 1, pos_y),
+                current_digits.parse::<u64>().unwrap(),
+            );
         }
     }
 
@@ -107,12 +113,12 @@ fn solve_part_two(input: &str) -> u64 {
                     cur_part_number += 1;
                 }
 
-                    current_digits_x1 = 0;
-                    current_digits = String::new();
-                }
+                current_digits_x1 = 0;
+                current_digits = String::new();
+            }
 
-                if ch == '*' {
-                    gear_coords.insert((pos_x, pos_y));
+            if ch == '*' {
+                gear_coords.insert((pos_x, pos_y));
             }
         }
 
@@ -167,5 +173,8 @@ fn solve_part_two(input: &str) -> u64 {
 pub fn solve(use_test_input: bool, path_to_inputs: String) -> SolutionPair {
     let input = inputs::get_input(path_to_inputs, 2023, 3, use_test_input);
 
-    (format!("{}", solve_part_one(&input)), format!("{}", solve_part_two(&input)))
+    (
+        format!("{}", solve_part_one(&input)),
+        format!("{}", solve_part_two(&input)),
+    )
 }

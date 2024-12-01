@@ -1,5 +1,5 @@
+use crate::solutions::d2024::day01;
 use crate::SolutionPair;
-use crate::solutions::d2024::{day01};
 
 pub fn solve(day: u8, use_test_input: bool, path_to_inputs: String) -> SolutionPair {
     let func = get_solver(day);

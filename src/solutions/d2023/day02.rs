@@ -1,6 +1,6 @@
-use std::cmp::PartialEq;
-use crate::{SolutionPair};
 use crate::utils::inputs;
+use crate::SolutionPair;
+use std::cmp::PartialEq;
 
 #[derive(Debug, Enum, PartialEq)]
 enum GameColors {
@@ -23,7 +23,6 @@ fn match_game_part_to_color(part: &str) -> Option<(GameColors, u16)> {
             if color_value.is_ok() {
                 return Some((key, color_value.unwrap()));
             }
-
         }
     }
 
@@ -101,5 +100,8 @@ fn solve_part_two(input: &str) -> u64 {
 pub fn solve(use_test_input: bool, path_to_inputs: String) -> SolutionPair {
     let input = inputs::get_input(path_to_inputs, 2023, 2, use_test_input);
 
-    (format!("{}", solve_part_one(&input)), format!("{}", solve_part_two(&input)))
+    (
+        format!("{}", solve_part_one(&input)),
+        format!("{}", solve_part_two(&input)),
+    )
 }

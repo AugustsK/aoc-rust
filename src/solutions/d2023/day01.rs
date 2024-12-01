@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 
-use crate::{SolutionPair};
 use crate::utils::inputs;
+use crate::SolutionPair;
 
 fn solve_part_one(input: &str) -> i64 {
     let mut result: i64 = 0;
@@ -103,7 +103,9 @@ fn solve_part_two(input: &str) -> i64 {
 
             temp_match.push(c);
 
-            if let Some(maybe_last_digit) = check_temp_match(&temp_match.chars().rev().collect::<String>()) {
+            if let Some(maybe_last_digit) =
+                check_temp_match(&temp_match.chars().rev().collect::<String>())
+            {
                 last_digit = Some(maybe_last_digit);
                 break;
             }
@@ -132,5 +134,8 @@ fn solve_part_two(input: &str) -> i64 {
 pub fn solve(use_test_input: bool, path_to_inputs: String) -> SolutionPair {
     let input = inputs::get_input(path_to_inputs, 2023, 1, use_test_input);
 
-    (format!("{}", solve_part_one(&input)), format!("{}", solve_part_two(&input)))
+    (
+        format!("{}", solve_part_one(&input)),
+        format!("{}", solve_part_two(&input)),
+    )
 }

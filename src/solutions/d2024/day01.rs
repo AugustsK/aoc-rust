@@ -1,6 +1,6 @@
-use std::collections::HashMap;
-use crate::{SolutionPair};
 use crate::utils::inputs;
+use crate::SolutionPair;
+use std::collections::HashMap;
 
 fn solve_part_one(input: &str) -> u64 {
     let mut result: u64 = 0;
@@ -64,5 +64,8 @@ fn solve_part_two(input: &str) -> u64 {
 pub fn solve(use_test_input: bool, path_to_inputs: String) -> SolutionPair {
     let input = inputs::get_input(path_to_inputs, 2024, 1, use_test_input);
 
-    (format!("{}", solve_part_one(&input)), format!("{}", solve_part_two(&input)))
+    (
+        format!("{}", solve_part_one(&input)),
+        format!("{}", solve_part_two(&input)),
+    )
 }
