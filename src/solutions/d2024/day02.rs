@@ -114,7 +114,9 @@ fn solve_part_two(input: &str) -> u64 {
         }
 
         // Early filter out instances with too many direction changes
-        if direction == Direction::Inc && decreases >= 2 || direction == Direction::Dec && increases >= 2 {
+        if direction == Direction::Inc && decreases >= 2
+            || direction == Direction::Dec && increases >= 2
+        {
             continue;
         }
 
@@ -134,7 +136,8 @@ fn solve_part_two(input: &str) -> u64 {
                 let mut prev_is_valid_against_next = true;
 
                 if pos > 0 && pos + 2 < len {
-                    prev_is_valid_against_next = check_validity(&direction, &parsed_line[pos - 1], &parsed_line[pos + 1])
+                    prev_is_valid_against_next =
+                        check_validity(&direction, &parsed_line[pos - 1], &parsed_line[pos + 1])
                 }
 
                 if pos + 2 < len {
