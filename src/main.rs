@@ -10,6 +10,7 @@ use solutions::{y2023, y2024};
 use std::time::Instant;
 
 pub type SolutionPair = (String, String);
+pub type Coordinate = (usize, usize);
 
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]

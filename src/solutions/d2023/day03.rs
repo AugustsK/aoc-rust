@@ -1,8 +1,6 @@
-use crate::SolutionPair;
+use crate::{Coordinate, SolutionPair};
 use std::cmp;
 use std::collections::{HashMap, HashSet};
-
-type Coordinate = (usize, usize);
 
 fn solve_part_one(input: &str) -> u64 {
     let mut result: u64 = 0;
