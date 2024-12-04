@@ -1,4 +1,3 @@
-use crate::utils::inputs;
 use crate::SolutionPair;
 
 fn solve_part_one(input: &str) -> u64 {
@@ -124,9 +123,7 @@ fn solve_part_two(input: &str) -> u64 {
     result
 }
 
-pub fn solve(use_test_input: bool, path_to_inputs: String) -> SolutionPair {
-    let input = inputs::get_input(path_to_inputs, 2024, 3, use_test_input);
-
+pub fn solve(input: String) -> SolutionPair {
     (
         format!("{}", solve_part_one(&input)),
         format!("{}", solve_part_two(&input)),
