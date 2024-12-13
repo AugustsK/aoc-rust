@@ -196,23 +196,25 @@ fn solve_part_two(input: &str) -> u64 {
             &char_map,
             ['A', 'S'].to_vec(),
         );
-        let down_variant_b = !down_variant_a && check_if_xmas_in_map(
-            0,
-            &start_position,
-            &Direction::UpLeft,
-            &char_map,
-            ['A', 'S'].to_vec(),
-        ) && check_if_xmas_in_map(
-            0,
-            &start_position,
-            &Direction::DownRight,
-            &char_map,
-            ['A', 'M'].to_vec(),
-        );
+        let down_variant_b = !down_variant_a
+            && check_if_xmas_in_map(
+                0,
+                &start_position,
+                &Direction::UpLeft,
+                &char_map,
+                ['A', 'S'].to_vec(),
+            )
+            && check_if_xmas_in_map(
+                0,
+                &start_position,
+                &Direction::DownRight,
+                &char_map,
+                ['A', 'M'].to_vec(),
+            );
         let down_is_valid = down_variant_a || down_variant_b;
 
         if !down_is_valid {
-             continue;
+            continue;
         }
 
         let up_variant_a = check_if_xmas_in_map(
@@ -228,19 +230,21 @@ fn solve_part_two(input: &str) -> u64 {
             &char_map,
             ['A', 'S'].to_vec(),
         );
-        let up_variant_b = !up_variant_a && check_if_xmas_in_map(
-            0,
-            &start_position,
-            &Direction::DownLeft,
-            &char_map,
-            ['A', 'S'].to_vec(),
-        ) && check_if_xmas_in_map(
-            0,
-            &start_position,
-            &Direction::UpRight,
-            &char_map,
-            ['A', 'M'].to_vec(),
-        );
+        let up_variant_b = !up_variant_a
+            && check_if_xmas_in_map(
+                0,
+                &start_position,
+                &Direction::DownLeft,
+                &char_map,
+                ['A', 'S'].to_vec(),
+            )
+            && check_if_xmas_in_map(
+                0,
+                &start_position,
+                &Direction::UpRight,
+                &char_map,
+                ['A', 'M'].to_vec(),
+            );
 
         if down_is_valid && (up_variant_a || up_variant_b) {
             result += 1;
